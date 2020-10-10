@@ -12,11 +12,13 @@ fig:
 	make -C figures
 
 book:
-	pdflatex $(DOC)
+	-pdflatex $(DOC)
 	bibtex $(DOC)
 	makeindex $(DOC)
-	pdflatex $(DOC)
-	pdflatex $(DOC)
+	-pdflatex $(DOC)
+	-pdflatex $(DOC)
+
+
 
 veryclean:
 	git clean -fd
