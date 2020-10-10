@@ -135,11 +135,15 @@
 \showtransfirsttrue
 \showtranssecondtrue
 
+% 機械翻訳のみ
+\showoriginalfalse
+\showtransfirsttrue
+\showtranssecondfalse
+
 % 校正済日本語のみ表示
 \showoriginalfalse
 \showtransfirstfalse
 \showtranssecondtrue
-
 
 \makeindex
 
@@ -264,8 +268,15 @@ Typeset by Martin Schoeberl.}
 \lstlistoflistings
 \endgroup
 
-%\chapter{Foreword 前書き}
-\chapter{まえがき (L266 mune10 初回校正済)} %(校正  初回終了 ========================================================================)
+\ifshoworiginal
+\chapter{Foreword}
+\fi
+\ifshowtransfirst %(自動翻訳)
+\chapter{まえがき}
+\fi
+\ifshowtranssecond %(校正)
+\chapter{まえがき (L274 mune10 初回校正済)} %(校正  初回終了 ========================================================================)
+\fi
 
 \medskip
 \medskip
@@ -377,8 +388,15 @@ ChiselとFIRRTLメンテナ\\
 スタッフエンジニア、SiFive社
 \fi
 
-%\chapter{Preface 序文}
-\chapter{序文 (L379 mune10 初回校正済)} %(校正  初回終了 ========================================================================)
+\ifshoworiginal
+\chapter{Preface 序文}
+\fi
+\ifshowtransfirst %(自動翻訳)
+\chapter{Preface 序文}
+\fi
+\ifshowtranssecond %(校正)
+\chapter{序文 (L394 mune10 初回校正済)} %(校正  初回終了 ========================================================================)
+\fi
 
 \ifshoworiginal
 % This text goes on the backside of the book, and in Amazon description
@@ -428,8 +446,15 @@ The approach of this book is to present small to medium-sized typical hardware c
 
 %Martin has been four times at UC Berkeley on research stays, where he has picked up Chisel and was in close contact with the developers of Chisel. He lead the research project T-CREST where most of the components have been written in Chisel.
 
-%\section*{Foreword for the Second Edition}
-\section*{第2版のまえがき}
+\ifshoworiginal
+\section*{Foreword for the Second Edition}
+\fi
+\ifshowtransfirst %(自動翻訳)
+\section*{Foreword for the Second Edition}
+\fi
+\ifshowtranssecond %(校正)
+\section*{第2版のまえがき (L452)}
+\fi
 
 \ifshoworiginal
 As Chisel allows agile hardware design, so does open access and on-demand printing
@@ -474,8 +499,15 @@ FIFOのバリエーションは、デジタルデザインの型パラメータ�
 このFIFOのバリエーションでは、型パラメータと継承をデジタルデザインのなかでどのように使うかを解説しています。
 \fi
 
-%\section*{Acknowledgements}
-\section*{謝辞}
+\ifshoworiginal
+\section*{Acknowledgements}
+\fi
+\ifshowtransfirst %(自動翻訳)
+\section*{Acknowledgements}
+\fi
+\ifshowtranssecond %(校正)
+\section*{謝辞 (L505)}
+\fi
 
 \ifshoworiginal
 I want to thank everyone who has worked on Chisel for creating such
@@ -518,10 +550,31 @@ Many of your questions have helped to shape this book.
 あなたたちの質問の多くは、この本を形作るのに大変役立ちました。
 \fi
 
+\ifshowtranssecond %(日本語版追記)
+\section*{日本語訳について (L550)}
+
+この日本語訳は Chisel勉強会で行っています。
+翻訳で用いたオリジナルのバーションは  (2020年3月2日 b20a791 )です。
+オリジナルの更新に合わせて翻訳も新しくしていく予定です。
+日本語版のソースコードはこちら\url{https://github.com/chisel-jp/chisel-book} で公開しています。
+誤訳や表現の誤りの訂正など、小さな修正も歓迎します。
+
+Chiselに興味ある方は、勉強会に自由に参加できます。新型コロナの影響でF2Fの勉強会の開催はできておりませんが、Chisel勉強会のSlackへの登録URL \url{https://chisel-jp-slackin.herokuapp.com/}していただければ情報交換できると思います。
+
+\fi %(日本語版追記)
+
 \mainmatter
 
-%\chapter{Introduction}
-\chapter{はじめに (L522 mune10 初回校正済)} %(校正  第1章 初回終了 =================================================================)
+\ifshoworiginal
+\chapter{Introduction}
+\fi
+\ifshowtransfirst %(自動翻訳)
+\chapter{Introduction}
+\fi
+\ifshowtranssecond %(校正)
+\chapter{はじめに (L558 mune10 初回校正済)} %(校正  第1章 初回終了 =================================================================)
+\fi
+
 \label{sec:intro}
 
 \ifshoworiginal
@@ -747,8 +800,15 @@ We include links to further reading in the running text, mostly to
 この本はノートPCやタブレット（iPadなど）に向けて最適化しており、\myref{https://en.wikipedia.org/}{Wikipedia}の記事を中心に補足のためのリンクを掲載しています。
 \fi
 
-%\section{Installing Chisel and FPGA Tools}
+\ifshoworiginal
+\section{Installing Chisel and FPGA Tools}
+\fi
+\ifshowtransfirst %(自動翻訳)
+\section{Installing Chisel and FPGA Tools}
+\fi
+\ifshowtranssecond %(校正)
 \section{ChiselとFPGA開発ツールのインストール}
+\fi
 
 \ifshoworiginal
 Chisel is a Scala library, and the easiest way to install Chisel and Scala is
@@ -884,8 +944,15 @@ ChiselとScalaもWindowsにインストールして使用できます。
 \myref{https://git-scm.com/download/win}{gitクライアント}をインストールします。
 \fi
 
-%\subsection{FPGA Tools}
+\ifshoworiginal
+\subsection{FPGA Tools}
+\fi
+\ifshowtransfirst %(自動翻訳)
+\subsection{FPGA Tools}
+\fi
+\ifshowtranssecond %(校正)
 \subsection{FPGA ツール}
+\fi
 
 \ifshoworiginal
 To build hardware for an FPGA, you need a synthesize tool. The two major
@@ -980,8 +1047,15 @@ program for a hardware design.
 しかしこれはChiselなのでしょうか？このハードウェアは文字列を印刷するために生成されたものでしょうか？いいえ、これはただのScalaのコードであってハードウェア設計におけるHello Worldプログラムではありません。
 \fi
 
-%\section{Chisel Hello World}
+\ifshoworiginal
+\section{Chisel Hello World}
+\fi
+\ifshowtransfirst %(自動翻訳)
+\section{Chisel Hello World}
+\fi
+\ifshowtranssecond %(校正)
 \section{Chisel で Hello World}
+\fi
 
 \ifshoworiginal
 What is then the equivalent of a Hello World program for a hardware design?
@@ -1035,8 +1109,15 @@ That hardware then blinks the LED at 1~Hz.
 これによってハードウェアはLEDを1Hzで点滅させませす。
 \fi
 
-%\section{An IDE for Chisel}
+\ifshoworiginal
+\section{An IDE for Chisel}
+\fi
+\ifshowtransfirst %(自動翻訳)
+\section{An IDE for Chisel}
+\fi
+\ifshowtranssecond %(校正)
 \section{Chisel 用のIDE}
+\fi
 
 \ifshoworiginal
 This book makes no assumptions about your programming environment or editor you use.
@@ -1161,8 +1242,15 @@ To import an \code{sbt} based project open the folder with \emph{File - Open}.
 \emph{File - Open} でフォルダをオープンします。
 \fi
 
-%\section{Source Access and eBook Features}
+\ifshoworiginal
+\section{Source Access and eBook Features}
+\fi
+\ifshowtransfirst %(自動翻訳)
+\section{Source Access and eBook Features}
+\fi
+\ifshowtranssecond %(校正)
 \section{本書のソースコードへのアクセスと電子書籍の機能}
+\fi
 
 \ifshoworiginal
 This book is open source and hosted at GitHub: \myref{https://github.com/schoeberl/chisel-book}{chisel-book}.
@@ -1220,8 +1308,15 @@ We optimized the format of the eBook for reading on a tablet, such as an iPad.
 iPadなどのタブレットで読めるように、電子書籍のフォーマットを最適化しています。
 \fi
 
-%\section{Further Reading}
+\ifshoworiginal
+\section{Further Reading}
+\fi
+\ifshowtransfirst %(自動翻訳)
+\section{Further Reading}
+\fi
+\ifshowtranssecond %(校正)
 \section{参考文献}
+\fi
 
 \ifshoworiginal
 Here a list of further reading for digital design and Chisel:
@@ -1286,14 +1381,26 @@ Chiselの公式ドキュメントやその他の関連ドキュメントはオ�
 
 \end{itemize}
 
+\ifshowtranssecond %(日本語版追記)
 日本語の情報についてもリストします（日本語版追記）
 
 \begin{itemize}
-\item （TBD 日本語の情報源を追加）
+\item \myref{https://diningyo.booth.pm/items/1718207}{Chiselを始めたい人に読んでほしい本} だいにんぎょー はChiselとそのもととなるScalaの日本語で最初の解説書です。 \myref{https://www.amazon.co.jp/dp/4844378694/ref=cm_sw_em_r_mt_dp_.tvGFb8W1QH5Y}{Amazon}でも買えます。
+\item \myref{https://diningyo.booth.pm/items/1888995}{Chiselクイックリファレンス} だいにんぎょー はchisel3.utilパッケージのリファレンス集です。
+\item \myref{https://www.amazon.co.jp/dp/4802098057/ref=cm_sw_em_r_mt_dp_5AvGFb1ZHVJTP}{プログラマのためのFPGAによるRISC-Vマイコンの作り方} 堀江 徹也 (著) はChiselの紹介から始まり、SiFive社のフリーのRISC-V SoC実装である Freedomを例にFPGAの開発までカバーします。
 \end{itemize}
+\fi %(日本語版追記)
 
-%\section{Exercise}
+
+\ifshoworiginal
+\section{Exercise}
+\fi
+\ifshowtransfirst %(自動翻訳)
+\section{Exercise}
+\fi
+\ifshowtranssecond %(校正)
 \section{演習}
+\fi
 
 \ifshoworiginal
 Each chapter ends with a hands-on exercise. For the introduction exercise, we will use an
@@ -1508,8 +1615,15 @@ with the assumed clock frequency to see the simulated blinking LED.
 そのため、想定したクロック周波数でLEDの点滅のシミュレーションが出来るか、少し実験する必要があるかもしれません。
 \fi
 
-%\chapter{Basic Components}
-\chapter{ \rmfamily 基本コンポーネント (L1510 diningyo 初回校正済) } %(校正  第2章 作業中 ========================================)  % 2020-10-07 compile error
+\ifshoworiginal
+\chapter{Basic Components}
+\fi
+\ifshowtransfirst %(自動翻訳)
+\chapter{Basic Components}
+\fi
+\ifshowtranssecond %(校正)
+\chapter{基本コンポーネント (L1603 diningyo 初回校正済) } %(校正  第2章  ========================================)  % 
+\fi
 
 \ifshoworiginal
 In this section, we introduce the basic components for digital design:
@@ -1549,8 +1663,15 @@ These terms mean the same two possible values of a binary signal.
 これらの用語は、バイナリ信号がとりうる 2つの値を意味しています。
 \fi
 
-%\section{Signal Types and Constants}
+\ifshoworiginal
+\section{Signal Types and Constants}
+\fi
+\ifshowtransfirst %(自動翻訳)
+\section{Signal Types and Constants}
+\fi
+\ifshowtranssecond %(校正)
 \section{信号タイプと定数}
+\fi
 
 \ifshoworiginal
 Chisel provides three data types to describe signals, combinational logic, and registers:
@@ -1759,8 +1880,15 @@ Chiselでは論理を表現する方法として\code{Bool}型を定義してい
 \shortlist{code/bool.txt}
 \index{Bool}
 
-%\section{Combinational Circuits}
+\ifshoworiginal
+\section{Combinational Circuits}
+\fi
+\ifshowtransfirst %(自動翻訳)
+\section{Combinational Circuits}
+\fi
+\ifshowtranssecond %(校正)
 \section{組み合わせ回路}
+\fi
 
 \ifshoworiginal
 Chisel uses \myref{https://en.wikipedia.org/wiki/Boolean_algebra}{Boolean algebra} operators,
@@ -2122,8 +2250,15 @@ Table~\ref{tab:functions} shows various functions defined on and for Chisel data
 \index{Bitfield!extraction}
 \index{Bitfield!concatenation}
 
-%\subsection{Multiplexer}
+\ifshoworiginal
+\subsection{Multiplexer}
+\fi
+\ifshowtransfirst %(自動翻訳)
+\subsection{Multiplexer}
+\fi
+\ifshowtranssecond %(校正)
 \subsection{マルチプレクサ}
+\fi
 
 \index{Multiplexer}
 
@@ -2239,8 +2374,15 @@ also called register, which is described next.
 デジタル回路を記述するために必要な第2の基本要素は、レジスタとも呼ばれる状態要素です。次節ではこれについて説明します。
 \fi
 
-%\section{Registers}
+\ifshoworiginal
+\section{Registers}
+\fi
+\ifshowtransfirst %(自動翻訳)
+\section{Registers}
+\fi
+\ifshowtranssecond %(校正)
 \section{レジスター}
+\fi
 
 \ifshoworiginal
 \index{Register}
@@ -2373,8 +2515,15 @@ JavaとScalaのから来るもう一つの一般的な方法は、いくつか�
 他にJavaとScalaに由来した方法として、\myref{https://en.wikipedia.org/wiki/Camel_case}{キャメル・ケース} で複数の言葉から構成される識別子を付与する方法があります。
 \fi
 
-%\subsection{Counting}
+\ifshoworiginal
+\subsection{Counting}
+\fi
+\ifshowtransfirst %(自動翻訳)
+\subsection{Counting}
+\fi
+\ifshowtranssecond %(校正)
 \subsection{カウント}
+\fi
 
 \index{Counting}
 
@@ -2419,8 +2568,15 @@ till 9 and wraps around to 0 when reaching 9.
 
 \shortlist{code/counter.txt}
 
-%\section{Structure with Bundle and Vec}
-\section{バンドルとVecを用いたストラクチャ} % 2020-10-07 compile error
+\ifshoworiginal
+\section{Structure with Bundle and Vec}
+\fi
+\ifshowtransfirst %(自動翻訳)
+\section{Structure with Bundle and Vec}
+\fi
+\ifshowtranssecond %(校正)
+\section{バンドルとVecを用いたストラクチャ}
+\fi
 
 \index{Structure}
 \index{Array}
@@ -2656,8 +2812,15 @@ structures, which are powerful abstractions.
 \code{Bundle}型と\code{Vec}型の組み合わせを使うことで、強力に抽象化された、任意のデータ構造を定義できます。
 \fi
 
-%\section{Chisel Generates Hardware}
+\ifshoworiginal
+\section{Chisel Generates Hardware}
+\fi
+\ifshowtransfirst %(自動翻訳)
+\section{Chisel Generates Hardware}
+\fi
+\ifshowtranssecond %(校正)
 \section{Chisel によるハードウェア生成}
+\fi
 
 \ifshoworiginal
 After seeing some initial Chisel code, it might look similar to classic programming
@@ -2732,9 +2895,15 @@ and getting the locking correct for the communication.
 ソフトウェアエンジニアの方は、アプリケーション用のスレッドや通信のためのロックの取得が必要ない、莫大な並列性を想像してみてください。
 \fi
 
-
-%\section{Exercise}
+\ifshoworiginal
+\section{Exercise}
+\fi
+\ifshowtransfirst %(自動翻訳)
+\section{Exercise}
+\fi
+\ifshowtranssecond %(校正)
 \section{演習}
+\fi
 
 \ifshoworiginal
 In the introduction you implemented a blinking LED on an FPGA board
@@ -2840,9 +3009,15 @@ without configuring an FPGA and toggle switches.
 ここまででシンプルな組み合わせ論理を実装して、その機能をFPGA上の本物のハードウェアでテストしました。次のステップでは、FPGAのコンフィグレーションを生成するためのビルドプロセスが、どのようにして動作するのかを、少し見てみましょう。
 \fi
 
-
-%\chapter{Build Process and Testing}
-\chapter{ \rmfamily ビルドプロセスとテスト (L2843 mune10 初回校正済) } %(2020-0810 校正  第3章  =============================================)
+\ifshoworiginal
+\chapter{Build Process and Testing}
+\fi
+\ifshowtransfirst %(自動翻訳)
+\chapter{Build Process and Testing}
+\fi
+\ifshowtranssecond %(校正)
+\chapter{ ビルドプロセスとテスト (L2997 mune10 初回校正済) } %(2020-0810 校正  第3章  =============================================)
+\fi
 
 \ifshoworiginal
 To get started with more interesting Chisel code we first need to learn how to compile
@@ -2881,8 +3056,15 @@ Scalaの人気のあるビルドツールの一つに、Scala interactive Build 
 \code{sbt} は、ビルドやテストプロセスを実行するだけでなく、正しいバージョンのScalaとChiselライブラリをダウンロードします。
 \fi
 
-%\section{Building your Project with sbt}
+\ifshoworiginal
+\section{Building your Project with sbt}
+\fi
+\ifshowtransfirst %(自動翻訳)
+\section{Building your Project with sbt}
+\fi
+\ifshowtranssecond %(校正)
 \section{sbt でプロジェクトを構築する}
+\fi
 
 \index{sbt}
 
@@ -2920,8 +3102,15 @@ Chiselやその他のScalaライブラリは、専用のバージョンを \code
 例えば、飛行機の上でハードウェア設計をするのはクールですよね。
 \fi
 
-%\subsection{Source Organization}
+\ifshoworiginal
+\subsection{Source Organization}
+\fi
+\ifshowtransfirst %(自動翻訳)
+\subsection{Source Organization}
+\fi
+\ifshowtranssecond %(校正)
 \subsection{ソースコードの構成}
+\fi
 
 \index{Source organization}
 
@@ -3105,8 +3294,15 @@ but use the fully qualified name \code{mypack.Abc} to refer to the module
 
 \shortlist{code/usepacket3.txt}
 
-%\subsection{Running sbt}
+\ifshoworiginal
+\subsection{Running sbt}
+\fi
+\ifshowtransfirst %(自動翻訳)
+\subsection{Running sbt}
+\fi
+\ifshowtranssecond %(校正)
 \subsection{sbt の実行}
+\fi
 
 \ifshoworiginal
 A Chisel project can be compiled and executed with a simple \code{sbt} command:
@@ -3189,8 +3385,15 @@ with \code{sbt}, we can continue with a simple testing framework.
 引き続き、簡単なテストフレームワークについて見てみましょう。
 \fi
 
-%\subsection{Tool Flow}
-\subsection{ツールの実行フロー (L3191)}
+\ifshoworiginal
+\subsection{Tool Flow}
+\fi
+\ifshowtransfirst %(自動翻訳)
+\subsection{Tool Flow}
+\fi
+\ifshowtranssecond %(校正)
+\subsection{ツールの実行フロー (L3373)}
+\fi
 
 \begin{figure}
   \centering
@@ -3278,8 +3481,15 @@ FIRRTLでの変換の一つは、Verilog Emitter JVMによる、論理合成用�
 FPGA設計フローでは、これらのツールはFPGA構成用のビットストリーム \code{Hello.bit} を生成します。
 \fi
 
-%\section{Testing with Chisel}
-\section{Chisel をつかったテスト (L3280)}
+\ifshoworiginal
+\section{Testing with Chisel}
+\fi
+\ifshowtransfirst %(自動翻訳)
+\section{Testing with Chisel}
+\fi
+\ifshowtranssecond %(校正)
+\section{Chisel をつかったテスト (L3469)}
+\fi
 
 \index{Testing}
 
@@ -3522,8 +3732,15 @@ However, in Chisel, the full power of Scala is available to write testers.
 \todo{Have a link to the not yet written section for: We will show these possibilities later.}
 \fi
 
-%\subsection{Using ScalaTest}
+\ifshoworiginal
+\subsection{Using ScalaTest}
+\fi
+\ifshowtransfirst %(自動翻訳)
+\subsection{Using ScalaTest}
+\fi
+\ifshowtranssecond %(校正)
 \subsection{ScalaTest の利用}
+\fi
 
 \index{ScalaTest}
 
@@ -3616,8 +3833,15 @@ test with \code{sbt}, as follows:
 $ sbt "testOnly SimpleSpec"
 \end{verbatim}
 
-%\subsection{Waveforms}
+\ifshoworiginal
+\subsection{Waveforms}
+\fi
+\ifshowtransfirst %(自動翻訳)
+\subsection{Waveforms}
+\fi
+\ifshowtranssecond %(校正)
 \subsection{波形表示}
+\fi
 
 \ifshoworiginal
 Testers, as described above, work well for small designs and for
@@ -3785,9 +4009,15 @@ the 2 2-bit input signals.
 sbt "testOnly WaveformCounterSpec"
 \end{verbatim}
 
-
-%\subsection{printf Debugging}
+\ifshoworiginal
+\subsection{printf Debugging}
+\fi
+\ifshowtransfirst %(自動翻訳)
+\subsection{printf Debugging}
+\fi
+\ifshowtranssecond %(校正)
 \subsection{printf デバッグ}
+\fi
 
 \ifshoworiginal
 Another form of debugging is the so-called ``printf debugging''. This form comes from
@@ -3868,8 +4098,15 @@ Chiselのprintfは\myref{https://github.com/freechipsproject/chisel3/wiki/Printi
 Chiselのprintfは\myref{https://github.com/freechipsproject/chisel3/wiki/Printing-in-Chisel}{C and Scala style formatting}をサポートしています。
 \fi
 
-%\section{Exercises}
+\ifshoworiginal
+\section{Exercises}
+\fi
+\ifshowtransfirst %(自動翻訳)
+\section{Exercises}
+\fi
+\ifshowtranssecond %(校正)
 \section{演習}
+\fi
 
 \ifshoworiginal
 For this exercise, we will revisit the blinking LED from
@@ -3889,8 +4126,15 @@ and explore Chisel testing. \todo{Also use the ALU example.}
 %\また、ALUの例を使用し、{TODO。｝
 \fi
 
-%\subsection{A Minimal Project}
-\subsection{小さなプロジェクト}
+\ifshoworiginal
+\subsection{A Minimal Project}
+\fi
+\ifshowtransfirst %(自動翻訳)
+\subsection{A Minimal Project}
+\fi
+\ifshowtranssecond %(校正)
+\subsection{最小のプロジェクト}
+\fi
 
 \ifshoworiginal
 First, let us find out what a minimal Chisel project is. Explore the files in the
@@ -4165,8 +4409,15 @@ The next exercise will explore such a project.
 次の演習では、このようなプロジェクトについて練習します。
 \fi
 
-%\subsection{A Testing Exercise}
+\ifshoworiginal
+\subsection{A Testing Exercise}
+\fi
+\ifshowtransfirst %(自動翻訳)
+\subsection{A Testing Exercise}
+\fi
+\ifshowtranssecond %(校正)
 \subsection{テストの演習}
+\fi
 
 \ifshoworiginal
 In the last chapter's exercise, you have extended the blinking LED example with some input
@@ -4216,8 +4467,15 @@ Chisel内でテストを行うことで、デザインのデバッグを高速�
 低コストなFPGA(Intel Cyclone またはXilinx Spartan)上で100MHz程度で動作します。
 \fi
 
-%\chapter{Components}
-\chapter{コンポーネント (L4219 mune10 初回校正済)}%(校正  第4章  ===============================================================)
+\ifshoworiginal
+\chapter{Components}
+\fi
+\ifshowtransfirst %(自動翻訳)
+\chapter{Components}
+\fi
+\ifshowtranssecond %(校正)
+\chapter{コンポーネント (L4455 mune10 初回校正済)}%(校正  第4章  ===============================================================)
+\fi
 
 \index{Component}
 \index{Module}
@@ -4306,9 +4564,15 @@ in your design.
 これらの標準コンポーネントには2つの目的があります。(1) Chiselコードの例を提供すること、(2) 設計で再利用できるコンポーネントのライブラリを提供することです。
 \fi
 
-
-%\section{Components in Chisel are Modules}
+\ifshoworiginal
+\section{Components in Chisel are Modules}
+\fi
+\ifshowtransfirst %(自動翻訳)
+\section{Components in Chisel are Modules}
+\fi
+\ifshowtranssecond %(校正)
 \section{Chisel のコンポーネントはモジュール}
+\fi
 
 \index{IO interface}
 
@@ -4540,8 +4804,15 @@ way to describe them as functions that return hardware.
 カウンターのような小さなコンポーネントに対して、Chiselでは、ハードウェアを返す関数として、それらをより軽量に表現する方法を提供しています。
 \fi
 
-%\section{An Arithmetic Logic Unit}
+\ifshoworiginal
+\section{An Arithmetic Logic Unit}
+\fi
+\ifshowtransfirst %(自動翻訳)
+\section{An Arithmetic Logic Unit}
+\fi
+\ifshowtranssecond %(校正)
 \section{算術論理ユニット}
+\fi
 
 \ifshoworiginal
 One of the central components for circuits that compute, e.g., a microprocessor, is an
@@ -4644,8 +4915,15 @@ To use this utility function, we need to import another Chisel package:
 
 \shortlist{code/components_util.txt}
 
-%\section{Bulk Connections}
+\ifshoworiginal
+\section{Bulk Connections}
+\fi
+\ifshowtransfirst %(自動翻訳)
+\section{Bulk Connections}
+\fi
+\ifshowtranssecond %(校正)
 \section{バルク接続}
+\fi
 
 \index{Bulk connection}
 
@@ -4732,8 +5010,15 @@ We can also connect the port of a submodule with the parent module.
 
 \shortlist{code/bundle_connect.txt}
 
-%\section{Lightweight Components with Functions}
+\ifshoworiginal
+\section{Lightweight Components with Functions}
+\fi
+\ifshowtransfirst %(自動翻訳)
+\section{Lightweight Components with Functions}
+\fi
+\ifshowtranssecond %(校正)
 \section{関数(Function)による軽量コンポーネント}
+\fi
 
 \label{sec:functions}
 \index{Function components}
@@ -4857,8 +5142,15 @@ functions.
 ただし、異なるモジュールで使用する関数は、ユーティリティ関数を集めたScalaオブジェクトの中に入れた方が良いでしょう。
 \fi
 
-%\chapter{Combinational Building Blocks}
-\chapter{ \rmfamily 組合せ回路ブロック (L4884 mune10/diningyo 初回校正済)}%(  2020-1008 校正  第5章  ====================================)
+\ifshoworiginal
+\chapter{Combinational Building Blocks}
+\fi
+\ifshowtransfirst %(自動翻訳)
+\chapter{Combinational Building Blocks}
+\fi
+\ifshowtranssecond %(校正)
+\chapter{ 組合せ回路ブロック (L5130 mune10/diningyo 初回校正済)}%(  2020-1008 校正  第5章  ====================================)
+\fi
 
 \ifshoworiginal
 In this chapter, we explore various combinational circuits, basic building blocks that we can
@@ -4885,8 +5177,15 @@ Two basic circuits, best described in a table form, are a decoder and an encoder
 表形式で記述するのに最適な基本回路は、デコーダとエンコーダの2つです。
 \fi
 
-%\section{Combinational Circuits}
+\ifshoworiginal
+\section{Combinational Circuits}
+\fi
+\ifshowtransfirst %(自動翻訳)
+\section{Combinational Circuits}
+\fi
+\ifshowtranssecond %(校正)
 \section{組合せ回路}
+\fi
 
 \index{Combinational circuit}
 
@@ -5118,8 +5417,15 @@ Scalaは\code{if}、\code{else if}、および\code{else}を持っていると�
 これらのScalaの条件分岐は、パラメータを用いて条件によって異なるハードウェアを生成する回路ジェネレータを作成する際に使用されます。
 \fi
 
-%\section{Decoder}
+\ifshoworiginal
+\section{Decoder}
+\fi
+\ifshowtransfirst %(自動翻訳)
+\section{Decoder}
+\fi
+\ifshowtranssecond %(校正)
 \section{デコーダー}
+\fi
 
 \index{Decoder}
 
@@ -5298,8 +5604,16 @@ select signals, e.g., different IO devices connected to a microprocessor.
 デコーダはアドレスのデコードにも使用され、その出力を例えば、マイクロプロセッサに接続される異なる種類のIOデバイスを選択する信号として使用します。
 \fi
 
-%\section{Encoder}
+\ifshoworiginal
+\section{Encoder}
+\fi
+\ifshowtransfirst %(自動翻訳)
+\section{Encoder}
+\fi
+\ifshowtranssecond %(校正)
 \section{エンコーダー}
+\fi
+
 \index{Encoder}
 
 \ifshoworiginal
@@ -5375,8 +5689,15 @@ for the legal input values.
 
 \shortlist{code/encdec_enc.txt}
 
-%\section{Exercise}
+\ifshoworiginal
+\section{Exercises}
+\fi
+\ifshowtransfirst %(自動翻訳)
+\section{Exercises}
+\fi
+\ifshowtranssecond %(校正)
 \section{演習}
+\fi
 
 \ifshoworiginal
 Describe a combinational circuit to convert a 4-bit binary input to the encoding of a
@@ -5400,8 +5721,15 @@ buttons to the input of your circuit and the output to the 7-segment display.
 もし7セグメント・ディスプレイが搭載されているFPGAを持っているなら、実装した回路の入力を4つのスイッチ、もしくはボタンに、出力を7セグメント・ディスプレイに接続しましょう。
 \fi
 
-%\chapter{Sequential Building Blocks}
-\chapter{ \rmfamily シーケンシャル回路ブロック (L5130 TODO)} %(校正  第6章  ========================================================================)
+\ifshoworiginal
+\chapter{Sequential Building Blocks}
+\fi
+\ifshowtransfirst %(自動翻訳)
+\chapter{Sequential Building Blocks}
+\fi
+\ifshowtranssecond %(校正)
+\chapter{ シーケンシャル回路ブロック (L5709 TODO)} %(校正  第6章  ========================================================================)
+\fi
 
 \ifshoworiginal
 Sequential circuits are circuits where the output depends on the input \emph{and}
@@ -5427,8 +5755,15 @@ the so-called registers.
 順序回路を構築するために、我々は状態を格納できる要素が必要です。
 \fi
 
-%\section{Registers}
-\section{レジスター (L5454 TODO)}
+\ifshoworiginal
+\section{Registers}
+\fi
+\ifshowtransfirst %(自動翻訳)
+\section{Registers}
+\fi
+\ifshowtranssecond %(校正)
+\section{レジスター (L5743 TODO)}
+\fi
 
 \index{Register}
 \index{Flip-flop}
@@ -5867,8 +6202,15 @@ good use and build more interesting sequential circuits.
 レジスタの基本的な使用法をすべて説明したところで、これらのレジスタを有効に使用して、より興味深いシーケンシャル回路を構築します。
 \fi
 
-%\section{Counters}
-\section{カウンター (L5894 TODO)}
+\ifshoworiginal
+\section{Counters}
+\fi
+\ifshowtransfirst %(自動翻訳)
+\section{Counters}
+\fi
+\ifshowtranssecond %(校正)
+\section{カウンター (L6109 TODO)}
+\fi
 
 \label{sec:counter}
 \index{Counter}
@@ -5938,8 +6280,15 @@ as shown in Figure~\ref{fig:event-counter} and in the following code.
 
 \shortlist{code/sequ_event_counter.txt}
 
-%\subsection{Counting Up and Down}
-\subsection{カウントアップとダウン (L5965 TODO)}
+\ifshoworiginal
+\subsection{Counting Up and Down}
+\fi
+\ifshowtransfirst %(自動翻訳)
+\subsection{Counting Up and Down}
+\fi
+\ifshowtranssecond %(校正)
+\subsection{カウントアップとダウン (L6268 TODO)}
+\fi
 
 \ifshoworiginal
 To count up to a value and then restart with \code{0}, we need to compare
@@ -6034,8 +6383,15 @@ to set \code{N} to 9. Setting \code{N} to 10 would be a classic example of an
 10に\code{N}を設定すると、\myref{https://en.wikipedia.org/wiki/Off-by-one_error}{off-by-one error}の古典的な例だろう。
 \fi
 
-%\subsection{Generating Timing with Counters}
-\subsection{カウンタによるタイミングの生成 (L6061 TODO)}
+\ifshoworiginal
+\subsection{Generating Timing with Counters}
+\fi
+\ifshowtransfirst %(自動翻訳)
+\subsection{Generating Timing with Counters}
+\fi
+\ifshowtranssecond %(校正)
+\subsection{カウンタによるタイミングの生成 (L6371 TODO)}
+\fi
 
 \label{sec:gen:timing}
 \index{Timing generation}
@@ -6194,8 +6550,15 @@ results in a counter with a width of a single bit.
 \code{0.U}のリセット値は、単一ビット幅のカウンタをもたらす場合、明示的な幅の定義は、驚きを回避することができます。
 \fi
 
-%\subsection{The Nerd Counter}
-\subsection{「オタク」カウンター (L6221 TODO)}
+\ifshoworiginal
+\subsection{The Nerd Counter}
+\fi
+\ifshowtransfirst %(自動翻訳)
+\subsection{The Nerd Counter}
+\fi
+\ifshowtranssecond %(校正)
+\subsection{「オタク」カウンター (L6538 TODO)}
+\fi
 
 \ifshoworiginal
 Many of us feel like being a \myref{https://en.wikipedia.org/wiki/Nerd}{nerd}, sometimes.
@@ -6259,8 +6622,15 @@ N-2から-1までカウントするとどうなるでしょうか？負の数は
 
 \shortlist{code/nerd_counter.txt}
 
-%\subsection{A Timer}
-\subsection{タイマー (L6286 TODO)}
+\ifshoworiginal
+\subsection{A Timer}
+\fi
+\ifshowtransfirst %(自動翻訳)
+\subsection{A Timer}
+\fi
+\ifshowtranssecond %(校正)
+\subsection{タイマー (L6610 TODO)}
+\fi
 
 \ifshoworiginal
 Another form of timer we can create, is a one-shot timer. A one-shot timer is like a
@@ -6363,8 +6733,15 @@ the register \code{reg}, instead of using the intermediate wire \code{next}.
 我々はもう少し簡潔なコードを目指す場合は、代わりに直接、中間ワイヤ\code{next}を使用する、レジスタ\code{reg}マルチプレクサ値を割り当てることができます。
 \fi
 
-%\subsection{Pulse-Width Modulation}
-\subsection{パルス幅変調(PWM) (L6390 TODO)}
+\ifshoworiginal
+\subsection{Pulse-Width Modulation}
+\fi
+\ifshowtransfirst %(自動翻訳)
+\subsection{Pulse-Width Modulation}
+\fi
+\ifshowtranssecond %(校正)
+\subsection{パルス幅変調(PWM) (L6721 TODO)}
+\fi
 
 \ifshoworiginal
 \myref{https://en.wikipedia.org/wiki/Pulse-width_modulation}{Pulse-width modulation} (PWM)
@@ -6554,8 +6931,15 @@ with a function call. Wire \code{sig} represents the modulated PWM signal.
 ワイヤ\code{sig}はPWM変調信号を表します。
 \fi
 
-%\section{Shift Registers}
-\section{シフトレジスタ (L6581 TODO)}
+\ifshoworiginal
+\section{Shift Registers}
+\fi
+\ifshowtransfirst %(自動翻訳)
+\section{Shift Registers}
+\fi
+\ifshowtranssecond %(校正)
+\section{シフトレジスタ (L6919 TODO)}
+\fi
 
 \begin{figure}
   \centering
@@ -6620,8 +7004,15 @@ send functions.
 節〜\ref{sec:uart}は用途が受信および送信機能するシフトレジスタというシリアルポートを示します。
 \fi
 
-%\subsection{Shift Register with Parallel Output}
-\subsection{パラレル出力付きシフトレジスタ (L6647 TODO)}
+\ifshoworiginal
+\subsection{Shift Register with Parallel Output}
+\fi
+\ifshowtransfirst %(自動翻訳)
+\subsection{Shift Register with Parallel Output}
+\fi
+\ifshowtranssecond %(校正)
+\subsection{パラレル出力付きシフトレジスタ (L6992 TODO)}
+\fi
 
 \ifshoworiginal
 A serial-in parallel-out configuration of a shift register transforms a serial input stream into parallel
@@ -6688,8 +7079,15 @@ MSB, which means a right shift. The parallel result, \code{q}, is just the readi
 図〜\ref{fig:shiftreg-paraout}は、並列出力機能を有する4ビットのシフトレジスタを示しています。
 \fi
 
-&\subsection{Shift Register with Parallel Load}
-\subsection{パラレルロード付きシフトレジスタ (L6715 TODO)}
+\ifshoworiginal
+\subsection{Shift Register with Parallel Load}
+\fi
+\ifshowtransfirst %(自動翻訳)
+\subsection{Shift Register with Parallel Load}
+\fi
+\ifshowtranssecond %(校正)
+\subsection{パラレルロード付きシフトレジスタ (L7067 TODO)}
+\fi
 
 \ifshoworiginal
 A parallel-in serial-out configuration of a shift register transforms a parallel input stream of words (bytes)
@@ -6742,8 +7140,15 @@ Note that we are now shifting to the right, filling in zeros at the MSB.
 現在は右にシフトして、MSB のゼロを埋めていることに注意してください。
 \fi
 
-%\section{Memory}
-\section{メモリー (L6769 TODO)}
+\ifshoworiginal
+\section{Memory}
+\fi
+\ifshowtransfirst %(自動翻訳)
+\section{Memory}
+\fi
+\ifshowtranssecond %(校正)
+\section{メモリー (L7128 TODO)}
+\fi
 
 \index{Memory}
 \index{RAM}
@@ -6959,8 +7364,15 @@ Chiselはまた、同期書き込みと非同期読み出しとメモリを表�
 したがって、我々は\code{SyncReadMem}を使用することをお勧めします。
 \fi
 
-%\section{Exercise}
-\section{演習 (L6986 TODO)}
+\ifshoworiginal
+\section{Exercises}
+\fi
+\ifshowtransfirst %(自動翻訳)
+\section{Exercises}
+\fi
+\ifshowtranssecond %(校正)
+\section{演習 (L6986 7332)}
+\fi
 
 \ifshoworiginal
 Use the 7-segment encoder from the last exercise and add a 4-bit counter as input
@@ -7052,8 +7464,15 @@ Sketch the block diagram for the following circuits:
 
 \todo{Luca: More exercises would be nice. Maybe in the future?}
 
-%\chapter{Input Processing}
-\chapter{入力処理 (L7079 TODO)}%(校正  第7章  ========================================================================)
+\ifshoworiginal
+\chapter{Input Processing}
+\fi
+\ifshowtransfirst %(自動翻訳)
+\chapter{Input Processing}
+\fi
+\ifshowtranssecond %(校正)
+\chapter{入力処理 (L7452 TODO)}%(校正  第7章  ========================================================================)
+\fi
 
 \ifshoworiginal
 Input signals from the external world into our synchronous circuit are usually
@@ -7095,8 +7514,15 @@ to deal with those issues in the digital domain.
 しかし、それはデジタル領域でこれらの問題に対処するために多くの（費用）効率的です。
 \fi
 
-%\section{Asynchronous Input}
-\section{非同期入力 (L6510 TODO)}
+\ifshoworiginal
+\section{Asynchronous Input}
+\fi
+\ifshowtransfirst %(自動翻訳)
+\section{Asynchronous Input}
+\fi
+\ifshowtranssecond %(校正)
+\section{非同期入力 (L7502 TODO)}
+\fi
 
 \index{Asynchronous Input}
 \index{Metastability}
@@ -7208,8 +7634,15 @@ to be synchronous to the clock.
 クロックに同期するリセットニーズのデアサーションコンクリート。
 \fi
 
-%\section{Debouncing}
-\section{デバウンス (L7235 TODO)}
+\ifshoworiginal
+\section{Debouncing}
+\fi
+\ifshowtransfirst %(自動翻訳)
+\section{Debouncing}
+\fi
+\ifshowtranssecond %(校正)
+\section{デバウンス (L7640 TODO)}
+\fi
 
 \index{Debouncing}
 
@@ -7381,8 +7814,15 @@ we can further process it in the digital domain.
 まず、非同期信号を同期させてから、デジタルドメインで処理します。
 \fi
 
-%\section{Filtering of the Input Signal}
-\section{ \rmfamily 入力信号のフィルタリング (L7408 TODO)}
+\ifshoworiginal
+\section{Filtering of the Input Signal}
+\fi
+\ifshowtransfirst %(自動翻訳)
+\section{Filtering of the Input Signal}
+\fi
+\ifshowtranssecond %(校正)
+\section{ 入力信号のフィルタリング (L7820 TODO)}
+\fi
 
 \index{Majority voting}
 
@@ -7490,8 +7930,15 @@ signal with the current value of \code{btnClean} to enable the counter to increm
 
 \shortlist{code/input_usage.txt}
 
-%\section{Combining the Input Processing with Functions}
-\section{入力処理と関数の組み合わせ (L7517 TODO)}
+\ifshoworiginal
+\section{Combining the Input Processing with Functions}
+\fi
+\ifshowtransfirst %(自動翻訳)
+\section{Combining the Input Processing with Functions}
+\fi
+\ifshowtranssecond %(校正)
+\section{入力処理と関数の組み合わせ (L7936 TODO)}
+\fi
 
 \ifshoworiginal
 To summarize the input processing, we show some more Chisel code.
@@ -7528,8 +7975,15 @@ If useful, those functions can be elevated to some utility class object.
 
 \longlist{code/input_func.txt}{Summarizing input processing with functions.}{lst:input:func}
 
-%\section{Exercise}
-\section{演習}
+\ifshoworiginal
+\section{Exercise}
+\fi
+\ifshowtransfirst %(自動翻訳)
+\section{Exercise}
+\fi
+\ifshowtranssecond %(校正)
+\section{演習 (L7981 DONE)}
+\fi
 
 \ifshoworiginal
 Build a counter that is incremented by an input button.
@@ -7588,8 +8042,15 @@ longer than 1--2 seconds.
 また、ボタンのリリースも多数決です。そのため、回路は1～2秒より長い場合にのみリリースを認識します。
 \fi
 
-%\chapter{Finite-State Machines}
-\chapter{有限状態機械（FSM）(L7615 TODO)}%(校正  第8章  ========================================================================)
+\ifshoworiginal
+\chapter{Finite-State Machines}
+\fi
+\ifshowtransfirst %(自動翻訳)
+\chapter{Finite-State Machines}
+\fi
+\ifshowtranssecond %(校正)
+\chapter{有限状態機械（FSM）(L8048 TODO)}%(校正  第8章  ========================================================================)
+\fi
 
 \index{Finite-state machine}
 \index{FSM}
@@ -7657,8 +8118,15 @@ out of smaller FSMs by combining them into communicating FSMs.
 次の章では、FSMの通信にそれらを組み合わせることにより、より小さなのFSMのうち、大規模なシステムを構築する方法について説明します。
 \fi
 
-%\section{Basic Finite-State Machine}
-\section{ \rmfamily 有限状態機械の基本 (L6970 TODO)}
+\ifshoworiginal
+\section{Basic Finite-State Machine}
+\fi
+\ifshowtransfirst %(自動翻訳)
+\section{Basic Finite-State Machine}
+\fi
+\ifshowtranssecond %(校正)
+\section{  有限状態機械の基本 (L8124 TODO)}
+\fi
 
 \begin{figure}
   \centering
@@ -7980,8 +8448,15 @@ VerilogおよびVHDLのレジスタは、特別な構文に記載されており
 Chiselのレジスタは、基本型であり、自由に組み合わせたブロック内で使用することができます。
 \fi
 
-%\section{Faster Output with a Mealy FSM}
-\section{ミーリー FSMで出力を高速化 (L7659 TODO)}
+\ifshoworiginal
+\section{Faster Output with a Mealy FSM}
+\fi
+\ifshowtransfirst %(自動翻訳)
+\section{Faster Output with a Mealy FSM}
+\fi
+\ifshowtranssecond %(校正)
+\section{ミーリー FSMで出力を高速化 (L78454 TODO)}
+\fi
 
 \ifshoworiginal
 On a Moore FSM, the output depends only on the current state.
@@ -8211,8 +8686,15 @@ FSMが3と以上の状態で、より複雑な回路に使用されなければ�
 FSMは、３つ以上の状態を持つより複雑な回路に使用するものとする。
 \fi
 
-%\section{Moore versus Mealy}
-\section{ムーア対ミーリー (L7890 TODO)}
+\ifshoworiginal
+\section{Moore versus Mealy}
+\fi
+\ifshowtransfirst %(自動翻訳)
+\section{Moore versus Mealy}
+\fi
+\ifshowtranssecond %(校正)
+\section{ムーア対ミーリー (L78692 TODO)}
+\fi
 
 \ifshoworiginal
 To show the difference between a Moore and Mealy FSM, we redo the edge
@@ -8355,8 +8837,15 @@ which are practically Mealy machines, are fine as well.
 事実上ミーリマシンですな立ち上がりエッジ検出などの小型回路は、同様に罰金です。
 \fi
 
-%\section{Exercise}
-\section{演習 (L8034 TODO)}
+\ifshoworiginal
+\section{Exercise}
+\fi
+\ifshowtransfirst %(自動翻訳)
+\section{Exercise}
+\fi
+\ifshowtranssecond %(校正)
+\section{演習 (L8843 TODO)}
+\fi
 
 \ifshoworiginal
 % This is a boring example, maybe I can find something more interesting
@@ -8408,8 +8897,15 @@ Martin: but this is shown at the Chisel homepage without an FSM.}
 
 \todo{Here a more interesting exercise. And not one from Dally.}
 
-%\chapter{Communicating State Machines}
-\chapter{コミュニケートステートマシン (L8435 TODO)} %(校正  第9章  ========================================================================)
+\ifshoworiginal
+\chapter{Communicating State Machines}
+\fi
+\ifshowtransfirst %(自動翻訳)
+\chapter{Communicating State Machines}
+\fi
+\ifshowtranssecond %(校正)
+\chapter{コミュニケートステートマシン (L8903 TODO)} %(校正  第9章  ========================================================================)
+\fi
 
 \index{Communicating state machines}
 
@@ -8442,8 +8938,15 @@ as often a single FSM would be infeasible large.
 多くの場合、単一のFSMは、実行不可能な大規模なものになります。
 \fi
 
-%\section{A Light Flasher Example}
-\section{ライトフラッシャーの例 (L8121 TODO}
+\ifshoworiginal
+\section{A Light Flasher Example}
+\fi
+\ifshowtransfirst %(自動翻訳)
+\section{A Light Flasher Example}
+\fi
+\ifshowtranssecond %(校正)
+\section{ライトフラッシャーの例 (L8944 TODO}
+\fi
 
 \ifshoworiginal
 To discuss communicating FSMs, we use an example
@@ -8685,8 +9188,15 @@ unidirectional data exchange.
 次項では、一方向データ交換のフロー制御のためのレディバリッドインタフェースについて説明します。
 \fi
 
-%\section{State Machine with Datapath}
-\section{データパスを持つステートマシン (L8364 TODO)}
+\ifshoworiginal
+\section{State Machine with Datapath}
+\fi
+\ifshowtransfirst %(自動翻訳)
+\section{State Machine with Datapath}
+\fi
+\ifshowtranssecond %(校正)
+\section{データパスを持つステートマシン (L9194 TODO)}
+\fi
 
 \index{State machine with datapath}
 \index{FSMD}
@@ -8726,9 +9236,15 @@ FSMの入力は、環境からの入力およびデータパスから入力さ�
   \label{fig:popcnt-fsmd}
 \end{figure}
 
-
-%\subsection{Popcount Example}
-\subsection{ポップカウントの例 (L8406 TODO)}
+\ifshoworiginal
+\subsection{Popcount Example}
+\fi
+\ifshowtransfirst %(自動翻訳)
+\subsection{Popcount Example}
+\fi
+\ifshowtranssecond %(校正)
+\subsection{ポップカウントの例 (L9242 TODO)}
+\fi
 
 \ifshoworiginal
 The FSMD shown in Figure~\ref{fig:popcnt-fsmd} serves as an example that computes the
@@ -8940,8 +9456,15 @@ POPCOUNTが有効である場合、FSMは状態\code{done}に切り替わり、P
 一覧〜\ref{lst:pop:fsm}は、FSMのコードを示します。
 \fi
 
-%\section{Ready-Valid Interface}
-\section{Ready-Valid インターフェース (L8619 TODO)}
+\ifshoworiginal
+\section{Ready-Valid Interface}
+\fi
+\ifshowtransfirst %(自動翻訳)
+\section{Ready-Valid Interface}
+\fi
+\ifshowtranssecond %(校正)
+\section{Ready-Valid インターフェース (L9462 TODO)}
+\fi
 
 \index{Ready-valid interface}
 
@@ -9218,8 +9741,15 @@ AXIは\code{ready}または\code{valid}がアサートされると、データ�
 
 \todo{Read and cite AXI, and check if the above is true}
 
-%\chapter{Hardware Generators}
+\ifshoworiginal
+\chapter{Hardware Generators}
+\fi
+\ifshowtransfirst %(自動翻訳)
+\chapter{Hardware Generators}
+\fi
+\ifshowtranssecond %(校正)
 \chapter{ハードウェアジェネレータ (L9245 TODO)} %(校正  第10章  ========================================================================)
+\fi
 
 \index{Hardware generators}
 
@@ -9253,8 +9783,15 @@ Chiselでは、スカラ（及びJavaライブラリー）のフルパワーは�
 したがって、我々は同じ言語で、当社ハードウェアジェネレータを書いて、Chisel回路生成の一部としてそれらを実行することができます。
 \fi
 
-%\section{Configure with Parameters}
+\ifshoworiginal
+\section{Configure with Parameters}
+\fi
+\ifshowtransfirst %(自動翻訳)
+\section{Configure with Parameters}
+\fi
+\ifshowtranssecond %(校正)
 \section{パラメータを使って設定する (L8932 TODO)}
+\fi
 
 \index{Parameters}
 
@@ -9273,8 +9810,15 @@ Chiselのコンポーネントや関数は、パラメータを使って設定�
 パラメータは整数定数のようなシンプルなものから、Chiselのハードウェアタイプのものまであります。
 \fi
 
-%\subsection{Simple Parameters}
-\subsection{シンプルなパラメータ (L8952 TODO)}
+\ifshoworiginal
+\subsection{Simple Parameters}
+\fi
+\ifshowtransfirst %(自動翻訳)
+\subsection{Simple Parameters}
+\fi
+\ifshowtranssecond %(校正)
+\subsection{シンプルなパラメータ (L9816 TODO)}
+\fi
 
 \ifshoworiginal
 The basic way to parameterize a circuit is to define a bit width as a parameter.
@@ -9315,8 +9859,15 @@ passed into the constructor that can be used in the IO bundle.
 
 \shortlist{code/use_param_adder.txt}
 
-%\subsection{Functions with Type Parameters}
-\subsection{型パラメータを持つ関数 (L8994 TODO)}
+\ifshoworiginal
+\subsection{Functions with Type Parameters}
+\fi
+\ifshowtransfirst %(自動翻訳)
+\subsection{Functions with Type Parameters}
+\fi
+\ifshowtranssecond %(校正)
+\subsection{型パラメータを持つ関数 (L9865 TODO)}
+\fi
 
 \index{Type parameters}
 
@@ -9479,8 +10030,15 @@ Following function shows the alternative way to code the multiplexer.
 
 \shortlist{code/param_func_alt.txt}
 
-%\subsection{Modules with Type Parameters}
-\subsection{タイプパラメータを持つモジュール (L9158 TODO)}
+\ifshoworiginal
+\subsection{Modules with Type Parameters}
+\fi
+\ifshowtransfirst %(自動翻訳)
+\subsection{Modules with Type Parameters}
+\fi
+\ifshowtranssecond %(校正)
+\subsection{タイプパラメータを持つモジュール (10036 TODO)}
+\fi
 
 \ifshoworiginal
 We can also parameterize modules with Chisel types.
@@ -9546,8 +10104,15 @@ the number of ports to the constructor of the router:
 
 \shortlist{code/param_mod_use.txt}
 
-%\subsection{Parameterized Bundles}
+\ifshoworiginal
+\subsection{Parameterized Bundles}
+\fi
+\ifshowtransfirst %(自動翻訳)
+\subsection{Parameterized Bundles}
+\fi
+\ifshowtranssecond %(校正)
 \subsection{パラメータ化されたバンドル (L9225 TODO)}
+\fi
 
 \ifshoworiginal
 In the router example, we used two different vectors of fields for the input
@@ -9630,11 +10195,17 @@ a \code{Payload} as a parameter:
 パラメータとして\code{Payload}を取る\code{Port}でそのルータをインスタンス化します。
 \fi
 
-
 \shortlist{code/param_mod_use2.txt}
 
-%\section{Generate Combinational Logic}
-\section{組合せ論理回路の生成 (L9312 TODO)}
+\ifshoworiginal
+\section{Generate Combinational Logic}
+\fi
+\ifshowtransfirst %(自動翻訳)
+\section{Generate Combinational Logic}
+\fi
+\ifshowtranssecond %(校正)
+\section{組合せ論理回路の生成 (L10203 TODO)}
+\fi
 
 \index{Logic generation}
 \index{Logic table generation}
@@ -9795,8 +10366,15 @@ Chiselで、我々はハードウェアの世代の一部として直接この�
 
 \longlist{code/bcd_table.txt}{Binary to binary-coded decimal conversion.}{lst:bcd}
 
-%\section{Use Inheritance}
-\section{継承を利用する (L9474 TODO)}
+\ifshoworiginal
+\section{Use Inheritance}
+\fi
+\ifshowtransfirst %(自動翻訳)
+\section{Use Inheritance}
+\fi
+\ifshowtranssecond %(校正)
+\section{継承を利用する (L10372 TODO)}
+\fi
 
 \label{sec:inheritance}
 
@@ -9944,8 +10522,15 @@ sbt "testOnly TickerSpec"
 
 \longlist{code/ticker_spec.txt}{ScalaTest specifications for the ticker tests.}{lst:ticker:spec}
 
-%\section{Hardware Generation with Functional Programming}
-\section{関数型プログラミングによるハードウェア生成 (L9623 TODO)}
+\ifshoworiginal
+\section{Hardware Generation with Functional Programming}
+\fi
+\ifshowtransfirst %(自動翻訳)
+\section{Hardware Generation with Functional Programming}
+\fi
+\ifshowtranssecond %(校正)
+\section{関数型プログラミングによるハードウェア生成 (L19523 TODO)}
+\fi
 
 \label{sec:functional}
 \index{Functional programming}
@@ -10051,8 +10636,15 @@ If we do not trust the synthesize tool to rearrange our adder chain, we can use 
 
 \shortlist{code/fun_reduce_tree.txt}
 
-%\chapter{Example Designs}
-\chapter{デザイン例 (L10078 TODO)} %(校正  11章 ========================================================================)
+\ifshoworiginal
+\chapter{Example Designs}
+\fi
+\ifshowtransfirst %(自動翻訳)
+\chapter{Example Designs}
+\fi
+\ifshowtranssecond %(校正)
+\chapter{デザイン例 (L10642 TODO)} %(校正  11章 ========================================================================)
+\fi
 
 \ifshoworiginal
 In this section, we explore some small size digital designs, such as
@@ -10071,8 +10663,15 @@ which itself may use the FIFO buffer.
 別の例として、シリアル・インターフェース（UARTとも呼ばれます）を設計しますが、これ自体はFIFOバッファを使用します。
 \fi
 
-%\section{FIFO Buffer}
+\ifshoworiginal
+\section{FIFO Buffer}
+\fi
+\ifshowtransfirst %(自動翻訳)
+\section{FIFO Buffer}
+\fi
+\ifshowtranssecond %(校正)
 \section{FIFO バッファ (L10098 TODO)}
+\fi
 
 \label{sec:fifo}
 \index{FIFO}
@@ -10341,8 +10940,15 @@ I will present other possible implementations of FIFOs in Section~\ref{sec:more:
 私は節〜\ref{sec:more:fifo}にFIFOの他の可能な実装を紹介します。
 \fi
 
-%\section{A Serial Port}
+\ifshoworiginal
+\section{A Serial Port}
+\fi
+\ifshowtransfirst %(自動翻訳)
+\section{A Serial Port}
+\fi
+\ifshowtranssecond %(校正)
 \section{シリアルポート (L10368 TODO)}
+\fi
 
 \label{sec:uart}
 \index{Serial port}
@@ -10710,8 +11316,15 @@ received character is sent back (echoed).
 この接続は、各受信された文字が送り返される\code{Echo}回路を生成する（エコー）。
 \fi
 
-%\section{FIFO Design Variations}
-\section{ \rmfamily FIFO設計のバリエーション (L10737 TODO)}
+\ifshoworiginal
+\section{FIFO Design Variations}
+\fi
+\ifshowtransfirst %(自動翻訳)
+\section{FIFO Design Variations}
+\fi
+\ifshowtranssecond %(校正)
+\section{ FIFO設計のバリエーション (L11322 TODO)}
+\fi
 
 \label{sec:more:fifo}
 
@@ -10731,8 +11344,15 @@ as introduced in Section~\ref{sec:inheritance}.
 節〜\ref{sec:inheritance}で導入され、これらの実装は、私たちが継承を使用する交換可能にします。
 \fi
 
-%\subsection{Parameterizing FIFOs}
-\subsection{FIFOのパラメータ化 (L10758 TODO)}
+\ifshoworiginal
+\subsection{Parameterizing FIFOs}
+\fi
+\ifshowtransfirst %(自動翻訳)
+\subsection{Parameterizing FIFOs}
+\fi
+\ifshowtranssecond %(校正)
+\subsection{FIFOのパラメータ化 (L1135 TODO)}
+\fi
 
 \ifshoworiginal
 We define an \code{abstract}
@@ -10845,8 +11465,15 @@ or just simplicity).
 抽象基底クラスとインタフェースで、私たちは、異なるパラメータ（速度、面積、消費電力、または単にシンプル）用に最適化された別のFIFOの実装のために特化することができます。
 \fi
 
-%\subsection{Redesigning the Bubble FIFO}
-\subsection{バブルFIFOの再設計 (L10872 TODO)}
+\ifshoworiginal
+\subsection{Redesigning the Bubble FIFO}
+\fi
+\ifshowtransfirst %(自動翻訳)
+\subsection{Redesigning the Bubble FIFO}
+\fi
+\ifshowtranssecond %(校正)
+\subsection{バブルFIFOの再設計 (L11471 TODO)}
+\fi
 
 \ifshoworiginal
 We can redefine our bubble FIFO from Section~\ref{sec:fifo} using standard
@@ -10921,8 +11548,15 @@ to the producer handshake, which violates the semantics of the ready-valid proto
 しかし、これは、すぐ有効なプロトコルのセマンティクスに違反プロデューサーの握手に消費者の握手から組み合わせパスを導入しています。
 \fi
 
-%\subsection{Double Buffer FIFO}
-\subsection{ダブルバッファFIFO (L10948 TODO)}
+\ifshoworiginal
+\subsection{Double Buffer FIFO}
+\fi
+\ifshowtransfirst %(自動翻訳)
+\subsection{Double Buffer FIFO}
+\fi
+\ifshowtranssecond %(校正)
+\subsection{ダブルバッファFIFO (L11554 TODO)}
+\fi
 
 \index{Double buffer FIFO}
 
@@ -11006,8 +11640,15 @@ Similar the fall through latency is half of the bubble FIFO.
 レイテンシーによる同様の秋には、バブルFIFOの半分です。
 \fi
 
-%\subsection{FIFO with Register Memory}
-\subsection{レジスタメモリ付きFIFO (L11033 TODO)}
+\ifshoworiginal
+\subsection{FIFO with Register Memory}
+\fi
+\ifshowtransfirst %(自動翻訳)
+\subsection{FIFO with Register Memory}
+\fi
+\ifshowtranssecond %(校正)
+\subsection{レジスタメモリ付きFIFO (L11646 TODO)}
+\fi
 
 \ifshoworiginal
 When you come with a software engineering background you may have been
@@ -11225,8 +11866,15 @@ FIFOの出力は、読み取りポインタアドレスのメモリ素子です�
 準備ができて、有効なフラグは、単にフルと空の旗から派生しています。
 \fi
 
-%\subsection{FIFO with On-Chip Memory}
-\subsection{オンチップメモリ付きFIFO (L11252 TODO)}
+\ifshoworiginal
+\subsection{FIFO with On-Chip Memory}
+\fi
+\ifshowtransfirst %(自動翻訳)
+\subsection{FIFO with On-Chip Memory}
+\fi
+\ifshowtranssecond %(校正)
+\subsection{オンチップメモリ付きFIFO (L11872 TODO)}
+\fi
 
 \ifshoworiginal
 The last version of the FIFO used a register files to represent the memory,
@@ -11316,16 +11964,21 @@ FIFOベースのメモリを効率的にキューに大量のデータを保持�
 FIFOベースのメモリの出力では、我々は二重の出力からメモリ読み出し経路を分離するためにFIFOバッファを単一のステージを追加します。
 \fi
 
-
 \longlist{code/fifo_comb.txt}{Combining a memory based FIFO with double-buffer
 stage.}{lst:fifo:comb}
-
 
 %ステージ。
 %} {LST：FIFO：櫛}
 
-%\section{Exercises}
-\section{演習 (L11351 TODO)}
+\ifshoworiginal
+\section{Exercises}
+\fi
+\ifshowtransfirst %(自動翻訳)
+\section{Exercises}
+\fi
+\ifshowtranssecond %(校正)
+\section{演習 (L11980 TODO)}
+\fi
 
 \ifshoworiginal
 This exercise section is a little bit longer as it contains two exercises:
@@ -11345,8 +11998,15 @@ Source code for both exercises is included in the
 両方の練習のためのソースコードは、\myref{https://github.com/schoeberl/chisel-examples}{chisel-examples}リポジトリに含まれています。
 \fi
 
-%\subsection{Explore the Bubble FIFO}
-\subsection{バブルFIFOを探る (11372 TODO)}
+\ifshoworiginal
+\subsection{Explore the Bubble FIFO}
+\fi
+\ifshowtransfirst %(自動翻訳)
+\subsection{Explore the Bubble FIFO}
+\fi
+\ifshowtranssecond %(校正)
+\subsection{バブルFIFOを探る (12004 TODO)}
+\fi
 
 \ifshoworiginal
 The FIFO source also includes a tester that provokes different read and write behavior and generates a waveform in the
@@ -11496,9 +12156,15 @@ a vector of registers (\code{Reg(Vec(4, UInt(size.W)))}).
 ショートカットとして円形のバッファ使用、レジスタ（\code{Reg(Vec(4, UInt(size.W)))}）のベクトルの最初の実装のために。
 \fi
 
-
-%\subsection{The UART}
-\subsection{UART (L11524 TODO)}
+\ifshoworiginal
+\subsection{The UART}
+\fi
+\ifshowtransfirst %(自動翻訳)
+\subsection{The UART}
+\fi
+\ifshowtranssecond %(校正)
+\subsection{UART (L12162 TODO)}
+\fi
 
 \ifshoworiginal
 For the UART example, you need an FPGA board with a serial port and
@@ -11624,8 +12290,15 @@ and receiver.
 あなたは送信機と受信機にバッファリングを追加するために実装されていることをFIFOを追加すること自由に感じなさい。
 \fi
 
-%\subsection{FIFO Exploration}
-\subsection{FIFO探査 (L11651 TODO)}
+\ifshoworiginal
+\subsection{FIFO Exploration}
+\fi
+\ifshowtransfirst %(自動翻訳)
+\subsection{FIFO Exploration}
+\fi
+\ifshowtranssecond %(校正)
+\subsection{FIFO探査 (L12296 TODO)}
+\fi
 
 \ifshoworiginal
 Write a simple FIFO with 4 buffer elements in dedicated registers.
@@ -11682,8 +12355,15 @@ FPGAのためにそれらを合成することによって、異なるサイズ�
 4つのワード、16ワード、および256ワードのFIFOのためのスイートスポットはどこですか？
 \fi
 
-%\chapter{Design of a Processor}
-\chapter{プロセッサの設計 (L11709 TODO)} %(校正  12章 ========================================================================)
+\ifshoworiginal
+\chapter{Design of a Processor}
+\fi
+\ifshowtransfirst %(自動翻訳)
+\chapter{Design of a Processor}
+\fi
+\ifshowtranssecond %(校正)
+\chapter{プロセッサの設計 (L12361 TODO)} %(校正  12章 ========================================================================)
+\fi
 
 \index{Processor}
 \index{Leros}
@@ -11778,8 +12458,15 @@ scall & scall A & System call (simulation hook) \\
 \label{tab:leros:isa}
 \end{table}
 
-%\section{Start with an ALU}
-\section{ALUから始める (L11805 TODO)}
+\ifshoworiginal
+\section{Start with an ALU}
+\fi
+\ifshowtransfirst %(自動翻訳)
+\section{Start with an ALU}
+\fi
+\ifshowtranssecond %(校正)
+\section{ALUから始める (L12464 TODO)}
+\fi
 
 \index{ALU}
 \index{Processor!ALU}
@@ -11951,8 +12638,15 @@ test Alu Success: 70567 tests passed in 70572 cycles taking
 [info] [3.825] RAN 70567 CYCLES PASSED
 \end{verbatim}
 
-%\section{Decoding Instructions}
-\section{命令のデコード (L11978 TODO)}
+\ifshoworiginal
+\section{Decoding Instructions}
+\fi
+\ifshowtransfirst %(自動翻訳)
+\section{Decoding Instructions}
+\fi
+\ifshowtranssecond %(校正)
+\section{命令のデコード (L12644 TODO)}
+\fi
 
 \index{Processor!instruction decode}
 
@@ -12029,8 +12723,15 @@ instruction that represents the opcode (in Leros for most instructions the upper
 
 \shortlist{code/leros_decode.txt}
 
-%\section{Assembling Instructions}
-\section{アセンブラ命令 (L12056 TODO)}
+\ifshoworiginal
+\section{Assembling Instructions}
+\fi
+\ifshowtransfirst %(自動翻訳)
+\section{Assembling Instructions}
+\fi
+\ifshowtranssecond %(校正)
+\section{アセンブラ命令 (L12729 TODO)}
+\fi
 
 \index{Assembler}
 
@@ -12126,8 +12827,15 @@ A Scala \code{match} expression covers the core of the assembly function.
 
 \longlist{code/leros_asm_match.txt}{The main part of the Leros assembler.}{lst:leros-asm-match}
 
-%\section{Exercise}
-\section{演習 (L12153 TODO)}
+\ifshoworiginal
+\section{Exercise}
+\fi
+\ifshowtransfirst %(自動翻訳)
+\section{Exercise}
+\fi
+\ifshowtranssecond %(校正)
+\section{演習 (L12833 TODO)}
+\fi
 
 \ifshoworiginal
 This exercise assignment in one of the last Chapters is in a very free form. You are at the end
@@ -12191,8 +12899,15 @@ design and implementation is no magic art, but the engineering that can be very 
 たぶんレロスプロセッサを構築する方法のデモンストレーションや必要なツールは、プロセッサの設計と実装は魔法アートが、非常に楽しいことができエンジニアリングではないことを確信しています。
 \fi
 
-%\chapter{Contributing to Chisel}
-\chapter{Chisel への貢献 (L12218 mune10 初回校正済) }%(校正 7/24 mune10 13章初回終了 =======================================================)
+\ifshoworiginal
+\chapter{Contributing to Chisel}
+\fi
+\ifshowtransfirst %(自動翻訳)
+\chapter{Contributing to Chisel}
+\fi
+\ifshowtranssecond %(校正)
+\chapter{Chisel への貢献 (L12905 mune10 初回校正済) }%(校正 7/24 mune10 13章初回終了 =======================================================)
+\fi
 
 \index{Chisel!Contribution}
 
@@ -12215,8 +12930,15 @@ Chiselは、絶えまない開発と改良のもとにあるオープンソー�
 ここでは、Chiselのライブラリの開発のための開発環境のセットアップと、Chiselへの貢献方法について説明します。
 \fi
 
-%\section{Setup the Development Environment}
+\ifshoworiginal
+\section{Setup the Development Environment}
+\fi
+\ifshowtransfirst %(自動翻訳)
+\section{Setup the Development Environment}
+\fi
+\ifshowtranssecond %(校正)
 \section{開発環境の設定}
+\fi
 
 \ifshoworiginal
 Chisel consists of several different repositories; all hosted at
@@ -12393,8 +13115,15 @@ See also \myref{https://github.com/freechipsproject/chisel3}{some notes at the C
 \myref{https://github.com/freechipsproject/chisel3}{some notes at the Chisel repo}も参照しておいてください。
 \fi
 
-%\section{Testing}
+\ifshoworiginal
+\section{Testing}
+\fi
+\ifshowtransfirst %(自動翻訳)
+\section{Testing}
+\fi
+\ifshowtranssecond %(校正)
 \section{テスト}
+\fi
 
 \ifshoworiginal
 When you change the Chisel library, you should run the Chisel tests.
@@ -12427,8 +13156,15 @@ new features.
 また、あなたはChiselに機能を追加する場合は、その新機能のテストを提供する必要があります。
 \fi
 
-%\section{Contribute with a Pull Request}
+\ifshoworiginal
+\section{Contribute with a Pull Request}
+\fi
+\ifshowtransfirst %(自動翻訳)
+\section{Contribute with a Pull Request}
+\fi
+\ifshowtranssecond %(校正)
 \section{プルリクエストで貢献する}
+\fi
 
 \ifshoworiginal
 In the Chisel project, no developer commits directly to the main repository.
@@ -12455,8 +13191,15 @@ Chiselプロジェクトでは、開発者はメインリポジトリに直接�
 Chiselのグループでも貢献方法について文書化 \myref{https://github.com/freechipsproject/chisel-lang-governance/blob/master/reviewer_guidelines.md}{contribution guidelines、貢献ガイドライン} を始めています。 
 \fi
 
-%\section{Exercise}
+\ifshoworiginal
+\section{Exercise}
+\fi
+\ifshowtransfirst %(自動翻訳)
+\section{Exercise}
+\fi
+\ifshowtranssecond %(校正)
 \section{演習}
+\fi
 
 \ifshoworiginal
 Invent a new operator for the \code{UInt} type, implement it in the Chisel library,
@@ -12529,8 +13272,15 @@ Chiselのオープンソースプロジェクトでどのように扱われる�
 Chiselのオープンソースプロジェクト内で、その変更とプルリクエストがどのように扱われているかを見てみましょう。
 \fi
 
-%\chapter{Summary}
+\ifshoworiginal
+\chapter{Summary}
+\fi
+\ifshowtransfirst %(自動翻訳)
+\chapter{Summary}
+\fi
+\ifshowtranssecond %(校正)
 \chapter{まとめ (L12556 mune10 初回校正済)} %(校正 7/23 mune10 14章初回終了 ==========================================================))
+\fi
 
 \label{sec:conclusion}
 
@@ -12625,6 +13375,12 @@ also contains projects for various popular FPGA boards:
 
 %\chapter{Chisel Projects}
 \chapter{Chiselを使っているプロジェクト一覧 (L12650 mune20 初回校正済)} %(校正 7/23 mune10 付録A 初回終了 ====================================))
+\ifshoworiginal
+\fi
+\ifshowtransfirst %(自動翻訳)
+\fi
+\ifshowtranssecond %(校正)
+\fi
 
 \index{Chisel!Examples}
 
@@ -12839,8 +13595,15 @@ Chiselを使用するオープンソースプロジェクトに心当たりが�
 その情報を、この本の将来版に含めるたいと思います。
 \fi
 
-%\chapter{Chisel 2}
+\ifshoworiginal
+\chapter{Chisel 2}
+\fi
+\ifshowtransfirst %(自動翻訳)
+\chapter{Chisel 2}
+\fi
+\ifshowtranssecond %(校正)
 \chapter{Chisel 2 (L12866 mune10 初回校正済)} %(校正 7/23 mune10 付録B 初回終了  ===========================================================))
+\fi
 
 \index{Chisel 2}
 
@@ -13052,9 +13815,15 @@ A memory with sequential registered read and write ports is defined in Chisel 2 
   }
 \end{chisel}
 
-
-%\chapter{Acronyms}
+\ifshoworiginal
+\chapter{Acronyms}
+\fi
+\ifshowtransfirst %(自動翻訳)
+\chapter{Acronyms}
+\fi
+\ifshowtranssecond %(校正)
 \chapter{略語 (L13080 mune10 初回校正済)} %(校正 3/9 mune10 付録C 初回終了  ================================================================))
+\fi
 
 \ifshoworiginal
 Hardware designers and computer engineers like to use acronyms.

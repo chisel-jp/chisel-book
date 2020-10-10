@@ -12,6 +12,7 @@
     ーSection にその行番号と進捗状況と追記
         - 作業終了時に行番号と進捗状況は削除
 - 翻訳作業のボランティア募集中です
+    - 日本語版のソースコード https://github.com/chisel-jp/chisel-book
     - 連絡は Chisel勉強会のSlackにお願いします。
         - 登録URL https://chisel-jp-slackin.herokuapp.com/
 
